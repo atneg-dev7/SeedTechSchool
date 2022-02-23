@@ -23,21 +23,25 @@ $(function () {
                 // エラー内容を表示
                 $('#zip_result').html(res.message);
             } else {
+                //存在しない郵便番号の場合
+                if (res.results === null){
+                    $('#zip_result').append("<p>指定の郵便番号に対応する住所が見つかりません</p>");
                 //住所を表示
-                let html = `
-                <div>
-                    <p>都道府県コード：${res.results[0].prefcode}</p>
-                    <p>都道府県：${res.results[0].address1}</p>
-                    <p>市区町村：${res.results[0].address2}</p>
-                    <p>町域：${res.results[0].address3}</p>
-                    <p>都道府県(カナ)：${res.results[0].kana1}</p>
-                    <p>市区町村(カナ)：${res.results[0].kana2}</p>
-                    <p>町域(カナ)：${res.results[0].kana3}</p>
-                </div>
-                `;
-                $('#zip_result').append(html);
+                } else {
+                    let html = `
+                    <div>
+                        <p>都道府県コード：${res.results[0].prefcode}</p>
+                        <p>都道府県：${res.results[0].address1}</p>
+                        <p>市区町村：${res.results[0].address2}</p>
+                        <p>町域：${res.results[0].address3}</p>
+                        <p>都道府県(カナ)：${res.results[0].kana1}</p>
+                        <p>市区町村(カナ)：${res.results[0].kana2}</p>
+                        <p>町域(カナ)：${res.results[0].kana3}</p>
+                    </div>
+                    `;
+                    $('#zip_result').append(html);
+                }
             }
-
         })
         .fail(function (error) {
             console.log(error);
