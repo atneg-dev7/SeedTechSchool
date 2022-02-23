@@ -1,0 +1,40 @@
+.wrapper{
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block1{
+    height: 30%;
+    width: 30%;
+    background-color: #3E2D21;
+}
+
+.block2{
+    height: 30%;
+    width: 70%;
+    background-color: #573F2E;
+}
+
+.block3{
+    height: 70%;
+    width: 30%;
+    background-color: #FAEDED;
+}
+
+.block-set{
+    height: 70%;
+    width: 70%;
+}
+
+.block4{
+    height: 70%;
+    width: 100%;
+    background-color: #6A4021;
+}
+
+.block5{
+    height: 30%;
+    width: 100%;
+    background-color: #573F2E;
+}
