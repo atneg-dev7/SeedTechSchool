@@ -1,0 +1,9 @@
+label {
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+}
+
+th,td{
+    border: 1px solid;
+}

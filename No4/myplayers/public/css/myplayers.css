@@ -1,0 +1,16 @@
+.player-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.player-box{
+    width: 33%;
+}
+
+.player-header{
+    text-align: center;
+}
+
+.player-image{
+    width: 100%;
+}
