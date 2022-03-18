@@ -1,6 +1,11 @@
 ## myplayers
 
-myplayersは、プロ野球好きのあなたのための選手成績管理サービスです。以下の機能が利用できます。 
+myplayersは、野球選手のコレクションアプリ。
+『"推し"の選手の情報を集めてコレクションしたい』というユーザーの声を叶えるために開発されたサービスです。
+
+## 使い方
+
+myplayersでは2022/3/19現在、以下の機能が利用できます。 
 
 - お気に入り選手の複数登録・編集
 - 登録済み選手の成績登録・編集
@@ -14,62 +19,45 @@ myplayersは、プロ野球好きのあなたのための選手成績管理サ�
     - 本塁打数
     - 盗塁数
 
-あなただけのお気に入り選手コレクションを作り、選手を応援しましょう！
+打者の成績管理に特化した機能のみ実装されております。
+投手成績については今後リリースの予定です。
 
-## 環境構築手順
+## 使用言語・環境
+- PHP
+- Laravel
 
-myplayersを利用するために、以下の手順で環境構築を行ってください。
+## 環境構築・利用手順
 
-- Composerのインストール…下記Composer公式ページ『Installation』の項目から、インストーラー『Composer-Setup.exe』をダウンロード
-    - https://getcomposer.org/doc/00-intro.md
-- 
+myplayersを利用するために、以下の手順で環境構築・利用準備を行ってください。
 
-## Laravel Sponsors
+＜XAMPPのインストール＞
+- 以下リンク先のApache Friendsにアクセス
+    - https://www.apachefriends.org/jp/index.html
+- 利用端末がWindowsなら『Windows向けXAMPP』、MACなら『OS X向けXAMPP』をダウンロード
+- ダウンロードしたインストーラーを起動し、表示に従ってデフォルトのままインストール
+- インストールしたXAMPPを起動し、『Apache』、『MySQL』のSTARTボタンを押下しApacheとMySQLを起動
+- 『MySQL』のADMINボタンを押下し、『phpMyAdmin』が開くことを確認
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+＜データベースの作成＞
+- phpMyAdminを開き、ホーム画面にて言語の設定を行う（初期は英語になっている）
+    - 日本語に変更する場合『Appearance settings』にて『日本語 - Japanese』を選択
+- 『新規作成』からデータベースを作成
+    - 『***myplayers***』という名前でデータベースを作成
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+＜myplayersの利用＞
+- 以下リポジトリからmyplayersをダウンロードし、『***C:\xampp\htdocs***』配下に配置
+    - https://github.com/atneg-dev7/SeedTechSchool/tree/main/No4
+- VSCodeで開き、`Ctrl + @`でコマンドラインを立ち上げた後、以下コマンドを流していく
+    - `php artisan migrate` …作成したmyplayersデータベース内に必要なテーブルを作成
+    - `php artisan serve` …http://localohost:8000にアクセスしLaravelの画面が表示されることを確認
+- 『Register』を押下し必要項目を入力、ユーザー登録
+- myplayersの利用開始
 
-## Contributing
+## 作成者
+今井元太
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 今後のリリース計画
+- 体裁修正
+- 投手成績管理機能
+- 各選手の写真を追加できるアルバム機能
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
